@@ -1,6 +1,6 @@
 # ros2_singularity
 
-This repository follows the steps of the [ROS2 installation of Dashing from source](https://index.ros.org/doc/ros2/Installation/Dashing/Linux-Development-Setup/) in a Singularity definition file and adds some functionality. Singularity containers can for instance be used from SLURM workload managers on computer clusters.
+This definition file is based on the ROS2 Docker from the [Docker Hub](https://hub.docker.com/r/osrf/ros2/dockerfile) and the official [Github Repo](https://github.com/osrf/docker_images/blob/master/ros2/source/source/Dockerfile) and adds some Singularity functionality. Singularity containers can for instance be used from SLURM workload managers on computer clusters.
 
 It is supposed to help new Singularity/ROS2 developers to start their projects.
 
