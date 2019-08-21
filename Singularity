@@ -75,6 +75,10 @@ From: ubuntu:bionic
         --symlink-install
 
 %environment
+        # set locale
+        export LANG=C.UTF-8
+        export LC_ALL=C.UTF-8
+        
         # Set default RMW if needed
         # export RMW_IMPLEMENTATION=rmw_opensplice_cpp
 
