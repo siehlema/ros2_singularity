@@ -9,6 +9,11 @@ From: ubuntu:bionic
         # Copy local files to folder if needed
 
 %post
+        # Set Timezone
+        echo 'Europe/Berlin' > /etc/timezone && \
+        ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime && \
+        apt-get update && apt-get install -q -y tzdata && rm -rf /var/lib/apt/lists/*
+        
         # Install basic dependencies
         apt-get update && apt-get install -q -y \
         bash-completion \
@@ -72,3 +77,9 @@ From: ubuntu:bionic
 %environment
         # Set default RMW if needed
         # export RMW_IMPLEMENTATION=rmw_opensplice_cpp
+
+%apprun example_talker
+        bash -c "cd /opt/ros2_ws && . install/local_setup.sh && ros2 run demo_nodes_cpp talker"
+
+%apprun example_listener
+        bash -c "cd /opt/ros2_ws && . install/local_setup.sh && ros2 run demo_nodes_cpp listener"
